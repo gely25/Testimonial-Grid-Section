@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    /* ## Colors
+    ### Primary */
+    --violet: hsl(263, 55%, 52%);
+    --Vdark-G-Blue: hsl(217, 19%, 35%);
+    --Very-D-B-B: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+
+/* Neutral */
+
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-Grayish-blue: hsl(210, 46%, 95%);
+
+/* typography */
+  --Font-size: 13px;
+  --weight1:500;
+  --weight2:600;
+
+}
+
+/* Configuraciones generales  */
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Barlow Semi Condensed";
+}
+
+/* centrado general */
+body{
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    font-size: var(--Font-size);
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Light-Grayish-blue);
+    max-width: 1440px;
+    min-width: 100vw;
+    font-family: "Barlow Semi Condensed";
+    
+
+ 
+
+   
+}
+.wrapper{
+    width: 100%;
+    margin-top: 50px; 
+    padding: 0;
+
+
+  
+   
+   
+    
+}
+
+
+.attribution{
+    margin-top: 50px;
+    text-decoration: none;
+}
+
+.attribution a{
+    text-decoration: none;
+    color: inherit;
+
+}
+
+
+/*mobile first designt*/
+.container{
+    width: 85%;
+    margin: auto;
+}
+
+
+
+.testimonial-Daniel{
+    grid-area: Daniel;
+    background-color: var(--violet);
+    position: relative;
+    z-index: -2;
+   
+}
+.testimonial-Jonathan{
+    grid-area: Jonathan;
+    background-color: var(--Vdark-G-Blue);
+   
+
+}
+.testimonial-Jeanette{
+    grid-area: Jeanette;
+    background-color: var(--White);
+
+    
+
+}
+.testimonial-Patrick{
+    grid-area: Patrick;
+    background-color: var(--Very-D-B-B);
+
+
+    
+}
+.testimonial-Kira{
+    grid-area: Kira;
+    background-color: var(--White);
+ 
+
+  
+}
+
+
+
+.testimonial-Daniel, .testimonial-Jonathan, .testimonial-Jeanette, .testimonial-Patrick, .testimonial-Kira{
+    border-radius: 8px;
+    padding: 2em 1.75em;
+    width: 100%;
+    margin: 2rem 0;
+ 
+}
+
+
+/* tipography */
+
+.white-text{
+    color: var(--White);
+
+}
+
+.dark-text{
+    color: var(--Vdark-G-Blue);
+}
+
+.normal-text{
+    line-height: 1.5;
+}
+
+
+h2{
+ 
+    font-weight: 500;
+    font-size: clamp(0.9375rem, 0.7224rem + 1.0753vw, 1.125rem);
+    line-height: 1.5;
+   
+   
+
+
+}
+
+h3{
+  
+    font-weight: 400;
+    color: var(--Light-gray);
+    font-size: clamp(0.8125rem, 0.5974rem + 1.0753vw, 1rem);
+    
+}
+
+.photo{
+    border-radius: 50%;
+    width: 30px;
+    height: auto;
+    margin-right: 20px;
+    
+  
+}
+
+.testimonial-Patrick .photo{
+    border: 3px solid var(--violet);
+
+}
+
+.testimonial-Daniel .photo{
+    border: 3px solid rgb(167, 117, 241);
+}
+
+
+
+/* .svg{
+    position: absolute;
+    width: 30%;
+    top: 0;
+    right: 50px;
+    z-index: -1 ;
+    height: 30%;
+} */
+
+
+
+
+.svg {
+    position: absolute;
+    width: 30vw; /* Se adapta al ancho de la pantalla */
+    max-width: 150px; /* Evita que crezca demasiado en pantallas grandes */
+    top: 0;
+    right: 5%;
+    z-index: -1;
+    opacity: 0.5; /* Para que no opaque el texto */
+}
+
+
+
+
+.testimonial-header{
+    display: flex;
+    margin-bottom: 30px;
+
+}
+ 
+
+.highlighted-text{
+
+    font-size: clamp(0.9375rem, 0.2207rem + 3.5842vw, 1.5625rem);
+    font-weight: var(--weight2);
+    margin-bottom: 25px;
+  
+   
+}
+
+ .white-text .normal-text{
+    color: var(--Light-gray);
+    font-size: clamp(0.9375rem, 0.7224rem + 1.0753vw, 1.125rem);
+    font-weight: var(--weight1);
+}
+
+.dark-text .normal-text{
+    color: var(--Vdark-G-Blue);
+    font-size: clamp(0.9375rem, 0.7224rem + 1.0753vw, 1.125rem);
+    
+  
+}
+
+/* desktop sized media query */
+@media (min-width: 1100px) {
+    
+
+
+    /* multiple cards layout */
+    .container {
+        padding: 0 30px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(100px, 1fr)); /*adapta el contenido a la columna porque toma en cuenta a las columnas definidas en template areas*/
+        grid-template-rows: 1fr 1fr;
+        gap: 10px;
+        grid-template-areas:
+            "Daniel Daniel Jonathan Kira"
+            "Jeanette Patrick Patrick Kira";
+    }
+
+    .testimonial-Daniel, .testimonial-Jonathan, .testimonial-Jeanette, .testimonial-Patrick, .testimonial-Kira{
+        padding: 2em;
+        width: 100%;
+        margin: 0;
+   }
+
+   .highlighted-text{
+        font-size: 1.25rem;
+   }
+
+
+   .white-text .normal-text, .dark-text .normal-text{
+    font-size: 0.8125rem;
+   }
+
+   
+    h2{
+        font-size: 0.8125rem;
+    }
+
+    h3{
+        font-size: 0.6875rem;
+        
+    }
+
+
+    .svg {
+        width: 120px; 
+        right: 15%;
+        
+    }
+    
+
+
+
+
+
+
+   
+
+}
+
+
+/* Tablet media query */
+@media screen and (min-width:600px) and (max-width:1099px) {
+    .wrapper{
+        width: 100%;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: auto auto auto;
+        gap: 30px;
+        grid-template-areas:
+            "Daniel Patrick"
+            "Jeanette Jonathan  "
+            "Kira Kira";
+    }
+    
+    .testimonial-Daniel, .testimonial-Jonathan, .testimonial-Jeanette, .testimonial-Patrick, .testimonial-Kira{
+        padding: 2em;
+        width: 100%;
+        margin: 0;
+        box-shadow: 0px 5px 20px -10px rgb(97, 96, 96) ;
+   } 
+   
+   .highlighted-text{
+        font-size: 1.25rem;
+   }
+
+   .white-text .normal-text, .dark-text .normal-text{
+    font-size: 0.8125rem;
+   }
+   h2{
+    font-size: 0.8125rem;
+   }
+
+  h3{
+    font-size: 0.6875rem;
+    
+  }
+
+  .svg {
+   
+    width: 15vw; 
+}
+
+
+
+    
+  
+
+
+
+   
+
+   
+
+    
+    
+}
+
